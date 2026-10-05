@@ -24,7 +24,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.14"
+          gradle-version: "9.2"
 
       - name: Build JAR
         run: gradle build --no-daemon
