@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.candle.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "AbstractClientPlayerMixin",
+    "AvatarRendererMixin",
+    "CameraMixin",
+    "EntityMixin",
+    "GameRendererMixin",
+    "LivingEntityRendererInvoker",
+    "LivingEntityRendererMixin",
+    "LoadingOverlayMixin",
+    "MinecraftMixin",
+    "OptionInstanceAccessor",
+    "ParticleEngineMixin",
+    "ScreenEffectRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}
