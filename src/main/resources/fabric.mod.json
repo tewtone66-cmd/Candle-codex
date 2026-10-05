@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "candlecodex",
+  "version": "${version}",
+  "name": "Candle Codex",
+  "description": "A clean, performance-first Fabric client with a custom Aurora UI, HUD and cosmetic showcase.",
+  "authors": ["Candle"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["dev.candle.codex.CodexClient"] },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
