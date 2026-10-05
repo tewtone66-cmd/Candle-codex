@@ -2,6 +2,7 @@ package dev.candle.codex;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 
 public final class CodexScreen extends Screen {
@@ -23,6 +24,6 @@ public final class CodexScreen extends Screen {
     private void performance(GuiGraphics g,int x,int y,int w){card(g,x,y,w,150,"FRAME-TIME RADAR");int gx=x+18,gy=y+55,gw=w-36,gh=72;g.fill(gx,gy,gx+gw,gy+gh,0xFF0D1219);for(int i=0;i<48;i++){int h=10+(int)(Math.abs(Math.sin(i*.58))*45);g.fill(gx+i*(gw/48),gy+gh-h,gx+i*(gw/48)+3,gy+gh,i%7==0?ACCENT:0xFF2A4650);}g.drawString(font,Component.literal("AVG 144 FPS    LOW 121    BEST 165"),x+18,y+131,TEXT,false);card(g,x,y+164,w,104,"PERFORMANCE PROFILE");g.drawString(font,Component.literal("Render: balanced"),x+18,y+205,TEXT,false);g.drawString(font,Component.literal("Cosmetic animations: adaptive"),x+18,y+225,MUTED,false);g.drawString(font,Component.literal("Heavy effects pause automatically under load"),x+18,y+245,MUTED,false);}
     private void settings(GuiGraphics g,int x,int y,int w){card(g,x,y,w,82,"SETTINGS");setting(g,x,y+104,w,"Animation quality","Adaptive");setting(g,x,y+148,w,"Interface scale","100%");setting(g,x,y+192,w,"Theme","Aurora Grid");setting(g,x,y+236,w,"Reduce effects","Off");}
     private void setting(GuiGraphics g,int x,int y,int w,String a,String b){g.fill(x+14,y,x+w-14,y+34,PANEL2);g.drawString(font,Component.literal(a),x+28,y+10,TEXT,false);g.drawString(font,Component.literal(b),x+w-120,y+10,BLUE,false);}
-    @Override public boolean mouseClicked(double mx,double my,int button){if(button==0&&mx>=34&&mx<=176)for(int i=0;i<tabs.length;i++){int y=110+i*44;if(my>=y-6&&my<=y+28){page=i;return true;}}return super.mouseClicked(mx,my,button);}
+    @Override public boolean mouseClicked(MouseButtonEvent e, boolean dbl){double mx=e.x(),my=e.y();int button=e.button();if(button==0&&mx>=34&&mx<=176)for(int i=0;i<tabs.length;i++){int y=110+i*44;if(my>=y-6&&my<=y+28){page=i;return true;}}return super.mouseClicked(e,dbl);}
     @Override public boolean isPauseScreen(){return false;}
 }
